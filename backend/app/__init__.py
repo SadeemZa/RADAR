@@ -1,0 +1,3 @@
+"""
+RADAR backend application package.
+"""

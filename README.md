@@ -1,67 +1,78 @@
 # RADAR 📡
 
-> Keep track of what's new.
+### Cybersecurity Intelligence & Vulnerability Tracking Platform
 
-RADAR is a cybersecurity intelligence and case knowledge platform.
+RADAR is a cybersecurity project that helps organize, track, and explore security vulnerabilities through an interactive dashboard.
 
-It collects cybersecurity information from trusted sources, transforms verified information into structured security cases, and makes historical cybersecurity cases searchable and understandable.
+The platform uses FastAPI, PostgreSQL, and the National Vulnerability Database (NVD) API to collect and manage CVE records.
 
-## Core Features
+## Features
 
-- Cybersecurity intelligence collection
-- Vulnerability tracking
-- Structured security cases
-- Source verification
-- Security View
-- Developer View
-- Similar Cases
-- Search and filtering
-- Telegram notifications
+- Interactive vulnerability dashboard.
+- Import vulnerability data from NVD.
+- Search and filter vulnerabilities.
+- Filter records by severity and vendor.
+- Store vulnerability records in PostgreSQL.
+- REST API built with FastAPI.
+- Update existing CVE records and prevent duplicates.
 
 ## Tech Stack
 
-### Backend
-
+**Backend**
 - Python
 - FastAPI
+- SQLAlchemy
 - PostgreSQL
 
-### Frontend
-
+**Frontend**
 - Next.js
 - React
 - TypeScript
+- CSS
 
-### Data Sources
-
-- NVD
-- CISA Known Exploited Vulnerabilities
-- GitHub Security Advisories
-- Vendor security advisories
-- Trusted cybersecurity RSS feeds
+**Data Source**
+- National Vulnerability Database (NVD)
 
 ## Project Structure
 
 ```text
 RADAR/
 ├── backend/
+│   ├── app/
+│   └── requirements.txt
 ├── frontend/
-├── README.md
+│   └── src/
+├── .env.example
 ├── .gitignore
-└── .env.example
+└── README.md
 
+Getting Started
+Backend
+Open a terminal and run:
+cd backend
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python -m uvicorn app.main:app --reload
 
-Development Status
-RADAR is currently under active development.
-The project is being built incrementally, starting with the backend foundation and data pipeline before expanding into the frontend intelligence dashboard.
+API: http://127.0.0.1:8000
+API Documentation: http://127.0.0.1:8000/docs
+Frontend
+Open another terminal and run:
+cd frontend
+npm install
+npm run dev
+
+Dashboard: http://localhost:3000
+NVD Integration
+RADAR supports manually importing CVE records from the NVD API.
+Automatic scheduled imports are not implemented yet.
 Security
-RADAR follows secure development practices including:
-- Environment-based secrets
-- Input validation
-- Secure database access
-- External URL validation
-- Rate limiting
-- Dependency management
-- Security-focused logging
+- Sensitive credentials must remain in environment variables.
+- Never upload .env files or database passwords to GitHub.
+- Configure the database connection before running the backend.
+Development Status
+RADAR is an ongoing cybersecurity project. The dashboard, API, database integration, vulnerability filtering, and manual NVD import have been implemented and tested locally.
+More features and improvements are planned.
 License
-This project is currently for portfolio and educational development.
+This project is currently intended for educational and portfolio purposes.

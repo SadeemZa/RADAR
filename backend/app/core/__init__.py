@@ -1,0 +1,3 @@
+"""
+RADAR application core package.
+"""
